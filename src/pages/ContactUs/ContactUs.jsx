@@ -1,11 +1,11 @@
 
 
-const Contact = () => {
+const ContactUs = () => {
     return (
         <div>
             <div className="bg-gray-100">
                 <div className="container mx-auto p-4">
-                    <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
+                    <h1 className="text-3xl font-bold mb-4">Any Query</h1>
                     <div className="bg-white rounded-lg shadow-md p-6">
                         <form action="#" method="POST">
                             <div className="mb-4">
@@ -57,4 +57,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default ContactUs;

@@ -7,6 +7,8 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Details from "../pages/Details";
 import PrivateRoute from "../Private/PrivateRoute";
+import Offer from "../pages/Offer/Offer";
+import ContactUs from "../pages/ContactUs/ContactUs";
 
 
 const Routes = createBrowserRouter([
@@ -38,6 +40,14 @@ const Routes = createBrowserRouter([
             {
                 path: "details/:id",
                 element: <PrivateRoute><Details></Details></PrivateRoute>
+            },
+            {
+                path: "/coupon",
+                element: <PrivateRoute><Offer></Offer></PrivateRoute>
+            },
+            {
+                path: "/query",
+                element: <PrivateRoute><ContactUs></ContactUs></PrivateRoute>
             }
         ]
     },
