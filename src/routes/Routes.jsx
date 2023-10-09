@@ -3,6 +3,10 @@ import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
+import Details from "../pages/Details";
+import PrivateRoute from "../Private/PrivateRoute";
 
 
 const Routes = createBrowserRouter([
@@ -22,6 +26,18 @@ const Routes = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact></Contact>
+            },
+            {
+                path: "/login",
+                element: <Login></Login>
+            },
+            {
+                path: "/register",
+                element: <Register></Register>
+            },
+            {
+                path: "details/:id",
+                element: <PrivateRoute><Details></Details></PrivateRoute>
             }
         ]
     },

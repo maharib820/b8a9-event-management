@@ -1,11 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { AiOutlineLogout } from "react-icons/ai";
+
 
 
 const Navbar = () => {
 
     const [open, setOpen] = useState(false);
+    const { user, logOut, loading } = useContext(AuthContext);
+
+    console.log(user);
 
     const links =
         <>
@@ -40,10 +46,21 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="">
-                    <Link to={""}><button className="btn bg-blue-500 mr-0 rounded-l-full text-white">SIGN IN</button></Link>
-                    <Link to={""}><button className="btn bg-blue-500 ml-0 rounded-r-full text-white">SIGN UP</button></Link>
-                </div>
+                {
+                    loading ? <span className="loading loading-ring loading-lg"></span> :
+                    (user ? 
+                        <div className="flex items-center gap-5">
+                            <div><img className="h-16 w-16 rounded-full" src={user.photoURL} alt="" /></div>
+                            <div onClick={logOut}>
+                                <AiOutlineLogout className="font-bold text-3xl"></AiOutlineLogout>
+                            </div>
+                        </div>
+                        :
+                        <div className="">
+                            <Link to={"/login"}><button className="btn bg-blue-500 mr-0 rounded-l-full text-white">SIGN IN</button></Link>
+                            <Link to={"/register"}><button className="btn bg-blue-500 ml-0 rounded-r-full text-white">SIGN UP</button></Link>
+                        </div>)
+                }
             </div>
         </div>
     );
