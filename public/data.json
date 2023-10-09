@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Weddings",
+    "price": 299,
+    "description": "Celebrate the beginning of a beautiful journey with an elegant wedding ceremony and reception.",
+    "longDescription": "A wedding is a magical moment, the start of a lifelong adventure shared between two people deeply in love. It's a day that deserves to be celebrated in style, surrounded by friends and family who share in your joy. Our wedding services are designed to make your special day absolutely perfect. Our team of experienced professionals will work closely with you to bring your vision to life, ensuring every detail is meticulously planned.",
+    "image": "https://i.ibb.co/J2FtVh3/weeding.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Birthday Parties",
+    "price": 599,
+    "description": "Throw a memorable birthday bash for yourself or a loved one with fun and festivities.",
+    "longDescription": "Birthdays are a time to celebrate life and all the joys it brings. Whether you're turning another year older or planning a surprise party for a loved one, our birthday party services are designed to make every moment special. Imagine a day filled with laughter, smiles, and cherished memories.",
+    "image": "https://i.ibb.co/tcFwPWw/birthday.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Anniversaries",
+    "price": 399,
+    "description": "Commemorate years of love and commitment with a special anniversary celebration.",
+    "longDescription": "Anniversaries are a testament to enduring love and the shared experiences of a committed partnership. It's a time to reflect on the beautiful journey you've embarked upon together and to celebrate the bond that continues to grow stronger with each passing year.",
+    "image": "https://i.ibb.co/QJBmd3q/anniver.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Engagement Parties",
+    "price": 799,
+    "description": "Announce your engagement with friends and family in style with an engagement party.",
+    "longDescription": "An engagement is a beautiful declaration of love, the promise of a future together filled with happiness and shared dreams. It's a moment that deserves to be celebrated in style, surrounded by loved ones who will witness your journey to forever.",
+    "image": "https://i.ibb.co/8N6vzRf/engag.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Retirement Parties",
+    "price": 499,
+    "description": "Bid farewell to a rewarding career and welcome a leisurely retirement with a retirement party.",
+    "longDescription": "Retirement marks the end of one chapter and the beginning of another, a time to bid farewell to a rewarding career and embrace a leisurely and fulfilling retirement. It's a moment that deserves to be celebrated in the company of colleagues, friends, and family who have been a part of your journey.",
+    "image": "https://i.ibb.co/VMxm0wt/retirement.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Baby Showers",
+    "price": 699,
+    "description": "Celebrate the upcoming arrival of a new bundle of joy with a baby shower filled with gifts and joy.",
+    "longDescription": "The arrival of a new baby is a moment of pure joy and anticipation, a time when friends and family come together to celebrate the love and blessings that a little one brings. A baby shower is a cherished tradition, a time to honor the expectant parents and shower them with love, well-wishes, and beautiful gifts as they prepare to welcome their bundle of joy.",
+    "image": "https://i.ibb.co/zNx6Ryv/baby-shower.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Graduation Parties",
+    "price": 599,
+    "description": "Mark the academic achievements of a graduate with a lively graduation party.",
+    "longDescription": "Graduation is a momentous occasion, a time to celebrate the culmination of years of hard work, dedication, and academic achievements. It's a milestone that deserves to be honored in a lively and spirited way, surrounded by fellow graduates and loved ones who share in your excitement.",
+    "image": "https://i.ibb.co/ckfhhLQ/graduation.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Holiday Parties",
+    "price": 899,
+    "description": "Get into the holiday spirit with festive gatherings and celebrations during the holiday season.",
+    "longDescription": "The holiday season is a time of magic, joy, and togetherness, a time to celebrate the warmth of family, friendship, and the spirit of giving. Holiday parties are a cherished tradition, an opportunity to come together and create beautiful memories during this special time of year.",
+    "image": "https://i.ibb.co/7g4Jmz3/holiday.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Bridal Showers",
+    "price": 349,
+    "description": "Honor the bride-to-be with gifts and well wishes at a bridal shower before her big day.",
+    "longDescription": "A bridal shower is a time-honored tradition, a moment to honor the bride-to-be and shower her with love, well-wishes, and beautiful gifts as she prepares to embark on the journey of marriage. It's a time for the bride and her closest friends and family to come together and create beautiful memories.",
+    "image": "https://i.ibb.co/BjtfPj7/bright.jpg"
+  }
+]
