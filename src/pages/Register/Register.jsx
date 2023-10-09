@@ -1,13 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, updateProfile, signInWithPopup } from "firebase/auth";
+import { FcGoogle } from "react-icons/fc";
+import app from "../../firebase/firebase.start";
 import { ToastContainer, toast } from 'react-toastify';
 
 
 const Register = () => {
 
-    const notify = (msg) => toast(msg);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const notify = () => toast("Wow so easy !");
 
     const { createUser, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -19,9 +24,14 @@ const Register = () => {
         const photo = form.get("photo-url");
         const email = form.get("email");
         const password = form.get("password");
-        
-        if(name=='a'){
-            notify("Input field missing", {position: toast.POSITION.TOP_CENTER});
+
+        if (password.length < 6) {
+            notify();
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            notify();
+            return;
         }
 
         console.log(name, photo, email, password);
@@ -36,6 +46,14 @@ const Register = () => {
                     .catch()
                 logOut();
                 navigate("/login")
+            })
+            .catch(e => console.log(e.message));
+    }
+
+    const googleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(() => {
+                navigate("/")
             })
             .catch(e => console.log(e.message));
     }
@@ -74,8 +92,12 @@ const Register = () => {
                     </div>
                 </form>
                 <p className="text-center font-bold">Already have an acoount ? <Link className="font-bold text-blue-600" to={"/login"}>Sign In</Link></p>
+                <div className="mt-3">
+                    <h2 className="text-center font-bold">Or</h2>
+                    <FcGoogle onClick={googleSignIn} className="mx-auto text-5xl mt-3"></FcGoogle>
+                </div>
             </div>
-            <ToastContainer></ToastContainer>
+            <ToastContainer />
         </div>
     );
 };

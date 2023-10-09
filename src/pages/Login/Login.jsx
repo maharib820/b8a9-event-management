@@ -1,8 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { FcGoogle } from "react-icons/fc";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.start";
 
 
 const Login = () => {
@@ -10,10 +11,8 @@ const Login = () => {
     const navigate = useNavigate();
     const { signIn } = useContext(AuthContext);
     const location = useLocation();
-
-    const notify = () => {
-
-    }
+    const provider = new GoogleAuthProvider()
+    const auth = getAuth(app);
 
 
     const handleLogin = e => {
@@ -23,18 +22,16 @@ const Login = () => {
         const password = form.get("password");
         console.log(email, password);
         signIn(email, password)
-            .then((r) => {
-                console.log(r.user);
-                toast('🦄 Wow so easy!', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    });
+            .then(() => {
+                navigate(location?.state ? location.state : "/")
+            })
+            .catch(e => console.log(e.message));
+    }
+
+
+    const googleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(() => {
                 navigate(location?.state ? location.state : "/")
             })
             .catch(e => console.log(e.message));
@@ -42,7 +39,7 @@ const Login = () => {
 
     return (
         <div>
-            
+
             <div className="bg-pink-200 md:mx-10 xl:mx-80 py-8 mt-10">
                 <h2 className="text-3xl text-center mt-10 font-bold">SIGN IN</h2>
                 <form onSubmit={handleLogin} className="card-body">
@@ -63,22 +60,11 @@ const Login = () => {
                     </div>
                 </form>
                 <p className="text-center font-bold">Do not have an acoount ? <Link className="font-bold text-blue-600" to={"/register"}>Sign Up</Link></p>
-                
+                <div className="mt-3">
+                    <h2 className="text-center font-bold">Or</h2>
+                    <FcGoogle onClick={googleSignIn} className="mx-auto text-5xl mt-3"></FcGoogle>
+                </div>
             </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-            />
-            {/* Same as */}
-            <ToastContainer />
         </div>
     );
 };

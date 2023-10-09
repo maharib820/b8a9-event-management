@@ -11,8 +11,6 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     const { user, logOut, loading } = useContext(AuthContext);
 
-    console.log(user);
-
     const links =
         <>
             <li className="mr-2"><NavLink to={"/"}>Home</NavLink></li>
