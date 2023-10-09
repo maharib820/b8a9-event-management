@@ -27,7 +27,7 @@ const Details = () => {
                 <div className="w-full text-center">
                     <img className="w-[700px] mx-auto" src={data?.image} alt="" />
                     <h2 className="text-4xl font-bold mt-8">{data?.title}</h2>
-                    <p className="font-bold mt-10 mx-40">
+                    <p className="font-bold mt-10 mx-2 xl:mx-40">
                         {data?.longDescription}
                     </p>
                     <h2 className="text-2xl font-bold mt-10 mb-3">Cost ${data?.price}</h2>

@@ -4,6 +4,8 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.start";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -14,6 +16,8 @@ const Login = () => {
     const provider = new GoogleAuthProvider()
     const auth = getAuth(app);
 
+    const toastt = (value) => toast(value, { position: toast.POSITION.TOP_CENTER })
+
 
     const handleLogin = e => {
         e.preventDefault();
@@ -21,11 +25,25 @@ const Login = () => {
         const email = form.get("email");
         const password = form.get("password");
         console.log(email, password);
+
+        if (password.length < 6) {
+            toastt("Password must be 6 characters")
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            toastt("Password must contain a upper case")
+            return;
+        }
+        else if(!/.*?[#?!@$%^&*-]/.test(password)) {
+            toastt("Password must contain a special character")
+            return;
+        }
+
         signIn(email, password)
             .then(() => {
                 navigate(location?.state ? location.state : "/")
             })
-            .catch(e => console.log(e.message));
+            .catch(e => toastt(e.message));
     }
 
 
@@ -34,7 +52,7 @@ const Login = () => {
             .then(() => {
                 navigate(location?.state ? location.state : "/")
             })
-            .catch(e => console.log(e.message));
+            .catch(e => toastt(e.message));
     }
 
     return (
@@ -65,6 +83,7 @@ const Login = () => {
                     <FcGoogle onClick={googleSignIn} className="mx-auto text-5xl mt-3"></FcGoogle>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

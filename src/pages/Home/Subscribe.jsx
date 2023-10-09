@@ -3,7 +3,7 @@
 const Subscribe = () => {
 
     return (
-        <div className="my-10 bg-[#cfedec] flex justify-center items-center h-80">
+        <div data-aos="flip-left" className="my-10 bg-[#cfedec] flex justify-center items-center h-80">
             <div className=" w-full text-center">
                 <h2 className="text-2xl font-bold mb-6">subscribe to get offer update</h2>
                 <form>

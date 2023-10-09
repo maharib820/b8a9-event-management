@@ -1,0 +1,22 @@
+[
+  {
+    "name": "John Doe",
+    "role": "CEO",
+    "expertise": "Business Strategy"
+  },
+  {
+    "name": "Jane Smith",
+    "role": "CTO",
+    "expertise": "Technology"
+  },
+  {
+    "name": "Alice Johnson",
+    "role": "Marketing Director",
+    "expertise": "Digital Marketing"
+  },
+  {
+    "name": "Bob Brown",
+    "role": "Lead Developer",
+    "expertise": "Web Development"
+  }
+]
